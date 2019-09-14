@@ -1,0 +1,36 @@
+.hero {
+  background: url("../../images/hero-bcg.jpeg") center/cover no-repeat;
+  height: calc(100vh - 60px);
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.baner {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  text-align: center;
+}
+
+.header {
+  font-size: 3.3rem;
+  margin: 0 0 3rem 0;
+  letter-spacing: 2px;
+}
+
+.button {
+  font-size: 1.1em;
+  background-color: #f09d51;
+  border: 1px solid #f09d51;
+  color: #ffffff;
+  padding: 20px 60px;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: #f09d51;
+}
