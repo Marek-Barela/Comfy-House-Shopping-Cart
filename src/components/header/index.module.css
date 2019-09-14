@@ -1,0 +1,13 @@
+.header {
+  background-color: #e7e2dd;
+}
+
+.wrapper {
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+}
