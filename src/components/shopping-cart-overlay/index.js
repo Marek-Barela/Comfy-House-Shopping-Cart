@@ -2,12 +2,19 @@ import React from "react";
 import ShoppingCartItem from "../shopping-cart-item";
 import getFullItemsPrice from "../../utils/getFullItemsPrice";
 import roundItemsPrice from "../../utils/roundItemsPrice";
-import { switchCartSidebar } from "../../actions/productsCartActions";
+import {
+  switchCartSidebar,
+  removeItemsFromCart
+} from "../../actions/productsCartActions";
 import { getProductsCart } from "../../selectors/productsCartSelector";
 import { connect } from "react-redux";
 import styles from "./index.module.css";
 
-const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
+const ShoppingCartOverlay = ({
+  productsCart,
+  switchCartSidebar,
+  removeItemsFromCart
+}) => {
   const {
     overlay,
     cartContainer,
@@ -40,7 +47,12 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
           </div>
           <div className={cartFooter}>
             <h4>Your Total : ${roundedItemsPrice}</h4>
-            <button className={clearButton}>CLEAR CART</button>
+            <button
+              className={clearButton}
+              onClick={() => removeItemsFromCart()}
+            >
+              CLEAR CART
+            </button>
           </div>
         </aside>
       </div>
@@ -53,7 +65,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  switchCartSidebar
+  switchCartSidebar,
+  removeItemsFromCart
 };
 
 export default connect(
