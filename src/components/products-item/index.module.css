@@ -18,6 +18,11 @@
 .imageWrapper img {
   width: 100%;
   height: 230px;
+  transition: opacity 0.3s;
+}
+
+.imageWrapper:hover img {
+  opacity: 0.5;
 }
 
 .button {
