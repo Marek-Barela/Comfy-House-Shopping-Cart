@@ -1,7 +1,11 @@
-import { SWITCH_PRODUCTS_CART_SIDEBAR } from "../actions/types";
+import {
+  SWITCH_PRODUCTS_CART_SIDEBAR,
+  ADD_NEW_PRODUCT_TO_CART
+} from "../actions/types";
 
 const initialState = {
-  cartIsOpen: false
+  cartIsOpen: false,
+  cartItems: []
 };
 
 export default (state = initialState, action) => {
@@ -11,6 +15,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         cartIsOpen: payload
+      };
+    }
+    case ADD_NEW_PRODUCT_TO_CART: {
+      return {
+        ...state,
+        cartItems: payload
       };
     }
     default: {
