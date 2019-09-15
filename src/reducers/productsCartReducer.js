@@ -1,7 +1,9 @@
 import {
   SWITCH_PRODUCTS_CART_SIDEBAR,
   ADD_NEW_PRODUCT_TO_CART,
-  REMOVE_PRODUCTS_FROM_CART
+  REMOVE_PRODUCTS_FROM_CART,
+  INCREASE_AMOUNT_OF_PRODUCTS,
+  DECREASE_AMOUNT_OF_PRODUCTS
 } from "../actions/types";
 
 const initialState = {
@@ -32,6 +34,29 @@ export default (state = initialState, action) => {
       return {
         ...state,
         cartItems: []
+      };
+    }
+    case INCREASE_AMOUNT_OF_PRODUCTS: {
+      const productItem = newState.cartItems.filter(product => {
+        return product.id === payload;
+      });
+      productItem[0].quantity++;
+      return {
+        ...state,
+        cartItems: [...newState.cartItems]
+      };
+    }
+    case DECREASE_AMOUNT_OF_PRODUCTS: {
+      const MINIMAL_AMOUNT_OF_ITEMS = 1;
+      const productItem = newState.cartItems.filter(product => {
+        return product.id === payload;
+      });
+      if (productItem[0].quantity !== MINIMAL_AMOUNT_OF_ITEMS) {
+        productItem[0].quantity--;
+      }
+      return {
+        ...state,
+        cartItems: [...newState.cartItems]
       };
     }
     default: {
