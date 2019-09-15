@@ -51,7 +51,7 @@ export default (state = initialState, action) => {
       const productItem = newState.cartItems.filter(product => {
         return product.id === payload;
       });
-      if (productItem[0].quantity !== MINIMAL_AMOUNT_OF_ITEMS) {
+      if (productItem[0].quantity > MINIMAL_AMOUNT_OF_ITEMS) {
         productItem[0].quantity--;
       }
       return {
