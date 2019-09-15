@@ -10,6 +10,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   const { type, payload } = action;
+  const newState = { ...state };
+
   switch (type) {
     case SWITCH_PRODUCTS_CART_SIDEBAR: {
       return {
@@ -20,7 +22,7 @@ export default (state = initialState, action) => {
     case ADD_NEW_PRODUCT_TO_CART: {
       return {
         ...state,
-        cartItems: payload
+        cartItems: newState.cartItems.concat(payload)
       };
     }
     default: {
