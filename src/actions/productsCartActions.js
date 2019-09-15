@@ -3,7 +3,8 @@ import {
   ADD_NEW_PRODUCT_TO_CART,
   REMOVE_PRODUCTS_FROM_CART,
   INCREASE_AMOUNT_OF_PRODUCTS,
-  DECREASE_AMOUNT_OF_PRODUCTS
+  DECREASE_AMOUNT_OF_PRODUCTS,
+  REMOVE_SINGLE_PRODUCT_FROM_CART
 } from "./types";
 
 export const switchCartSidebar = payload => {
@@ -36,6 +37,13 @@ export const increaseAmountOfProducts = id => {
 export const decreaseAmountOfProducts = id => {
   return {
     type: DECREASE_AMOUNT_OF_PRODUCTS,
+    payload: id
+  };
+};
+
+export const removeSingleProductFromCart = id => {
+  return {
+    type: REMOVE_SINGLE_PRODUCT_FROM_CART,
     payload: id
   };
 };

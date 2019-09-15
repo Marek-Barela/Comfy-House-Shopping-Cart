@@ -1,7 +1,8 @@
 import React from "react";
 import {
   increaseAmountOfProducts,
-  decreaseAmountOfProducts
+  decreaseAmountOfProducts,
+  removeSingleProductFromCart
 } from "../../actions/productsCartActions";
 import { connect } from "react-redux";
 import styles from "./index.module.css";
@@ -14,7 +15,8 @@ const ShoppingCartItem = props => {
     image,
     quantity,
     increaseAmountOfProducts,
-    decreaseAmountOfProducts
+    decreaseAmountOfProducts,
+    removeSingleProductFromCart
   } = props;
   const {
     cartItem,
@@ -31,7 +33,12 @@ const ShoppingCartItem = props => {
       <div>
         <h5 className={productName}>{title}</h5>
         <h6 className={cost}>${price}</h6>
-        <span className={removeProduct}>remove</span>
+        <span
+          className={removeProduct}
+          onClick={() => removeSingleProductFromCart(id)}
+        >
+          remove
+        </span>
       </div>
       <div className={productFooter}>
         <span
@@ -50,7 +57,8 @@ const ShoppingCartItem = props => {
 
 const mapDispatchToProps = {
   increaseAmountOfProducts,
-  decreaseAmountOfProducts
+  decreaseAmountOfProducts,
+  removeSingleProductFromCart
 };
 
 export default connect(

@@ -3,7 +3,8 @@ import {
   ADD_NEW_PRODUCT_TO_CART,
   REMOVE_PRODUCTS_FROM_CART,
   INCREASE_AMOUNT_OF_PRODUCTS,
-  DECREASE_AMOUNT_OF_PRODUCTS
+  DECREASE_AMOUNT_OF_PRODUCTS,
+  REMOVE_SINGLE_PRODUCT_FROM_CART
 } from "../actions/types";
 
 const initialState = {
@@ -57,6 +58,15 @@ export default (state = initialState, action) => {
       return {
         ...state,
         cartItems: [...newState.cartItems]
+      };
+    }
+    case REMOVE_SINGLE_PRODUCT_FROM_CART: {
+      const filtredProducts = newState.cartItems.filter(product => {
+        return product.id !== payload;
+      });
+      return {
+        ...state,
+        cartItems: filtredProducts
       };
     }
     default: {
