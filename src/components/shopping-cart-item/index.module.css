@@ -37,4 +37,5 @@
 .size {
   margin: 0;
   text-align: center;
+  user-select: none;
 }

@@ -14,3 +14,10 @@
   max-width: 1170px;
   margin: 0 auto;
 }
+
+.reactIcon {
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 50px;
+}
