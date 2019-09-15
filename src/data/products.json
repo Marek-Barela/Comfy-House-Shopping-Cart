@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Couch",
+      "price": 42.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/mhJCjHqAbLLBoG1MnyoiA/22eeddd51578e404dcc4aa54885e1f52/product-7.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Table",
+      "price": 11.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/bUeEtzVzKegKpFg08kDtn/d3b9541630f14dbf16858a9ef2ace9cc/product-8.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Queen Panel Bed",
+      "price": 10.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/6xwkqC2AHOpS6JJMIw8M54/35ef27b3e2d62c8aa2fc725c196dda0e/product-1.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Black Couch",
+      "price": 10.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/5zWYFl4d8K9HhCgkQxdcpc/2a5766e63d4c5fc646ee2e62ebbcc96c/product-9.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Single Panel Bed",
+      "price": 23.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/4bFZJnOYpizZScQnyTa4Sg/b46279db017341533fa366aa22bd8801/product-4.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Twin Panel Bed",
+      "price": 17.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/1c34FVuo1Edi1SShxHxaUu/06e9c49059325e120d4cbed4f4e8104c/product-3.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Dresser",
+      "price": 22.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/3psZ7dUuYTAXJEYLOFiyjK/989f8266e158dafd667f31ada6a2fcf3/product-6.jpeg"
+    },
+    {
+      "id": 8,
+      "title": "Fridge",
+      "price": 34.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/2b9xpnHAamoQEgez1GNQBG/db88ded685f052c1f2c8afb765a34052/product-5.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "King Panel Bed",
+      "price": 12.99,
+      "image": "https://images.ctfassets.net/48t1s0p1dk0p/qIjcp8j7EnrHlTwE8zRJ0/de795f7a67600ffd0704622e6a7603da/product-2.jpeg"
+    }
+  ]
+}
