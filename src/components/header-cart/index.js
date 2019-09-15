@@ -8,9 +8,9 @@ const Cart = ({ switchCartSidebar, productsCart }) => {
   const { cart } = styles;
   const { cartIsOpen } = productsCart;
   return (
-    <div className={cart} onClick={() => switchCartSidebar(!cartIsOpen)}>
+    <button className={cart} onClick={() => switchCartSidebar(!cartIsOpen)}>
       <span className="fas fa-cart-plus"></span>
-    </div>
+    </button>
   );
 };
 
