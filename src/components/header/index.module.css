@@ -1,5 +1,8 @@
 .header {
+  position: fixed;
   background-color: #e7e2dd;
+  width: 100%;
+  z-index: 900;
 }
 
 .wrapper {
