@@ -14,7 +14,7 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
     cartFooter,
     clearButton
   } = styles;
-  const { cartIsOpen } = productsCart;
+  const { cartIsOpen, cartItems } = productsCart;
   return (
     cartIsOpen && (
       <div className={overlay}>
@@ -27,7 +27,9 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
           </button>
           <div className={cartContent}>
             <h3>Your Cart</h3>
-            <ShoppingCartItem />
+            {cartItems.map(product => {
+              return <ShoppingCartItem key={product.id} {...product} />;
+            })}
           </div>
           <div className={cartFooter}>
             <h4>Your Total : $0</h4>

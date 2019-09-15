@@ -1,19 +1,28 @@
 import React from "react";
 import styles from "./index.module.css";
 
-const ShoppingCartItem = () => {
-  const { cartItem, cartImage, title, price, removeProduct } = styles;
+const ShoppingCartItem = ({ title, price, image, quantity }) => {
+  const {
+    cartItem,
+    cartImage,
+    productName,
+    cost,
+    removeProduct,
+    productFooter,
+    size
+  } = styles;
   return (
     <div className={cartItem}>
-      <img
-        className={cartImage}
-        src="https://images.ctfassets.net/48t1s0p1dk0p/bUeEtzVzKegKpFg08kDtn/d3b9541630f14dbf16858a9ef2ace9cc/product-8.jpeg"
-        alt="Product"
-      />
+      <img className={cartImage} src={image} alt={title} />
       <div>
-        <h5 className={title}>Table</h5>
-        <h6 className={price}>$11,99</h6>
+        <h5 className={productName}>{title}</h5>
+        <h6 className={cost}>${price}</h6>
         <span className={removeProduct}>remove</span>
+      </div>
+      <div className={productFooter}>
+        <span className="fas fa-chevron-up"></span>
+        <p className={size}>{quantity}</p>
+        <span className="fas fa-chevron-down"></span>
       </div>
     </div>
   );

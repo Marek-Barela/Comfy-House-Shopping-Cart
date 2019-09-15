@@ -11,12 +11,12 @@
   height: 75px;
 }
 
-.title {
+.productName {
   margin: 0;
   letter-spacing: 2px;
 }
 
-.price {
+.cost {
   font-size: 0.8em;
   margin: 10px 0;
   letter-spacing: 2px;
@@ -27,4 +27,14 @@
   font-size: 0.9em;
   font-weight: lighter;
   cursor: pointer;
+}
+
+.productFooter span {
+  color: #f09d51;
+  cursor: pointer;
+}
+
+.size {
+  margin: 0;
+  text-align: center;
 }

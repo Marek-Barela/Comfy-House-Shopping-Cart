@@ -20,9 +20,11 @@ export default (state = initialState, action) => {
       };
     }
     case ADD_NEW_PRODUCT_TO_CART: {
+      const newItem = payload;
+      newItem.quantity = 1;
       return {
         ...state,
-        cartItems: newState.cartItems.concat(payload)
+        cartItems: newState.cartItems.concat(newItem)
       };
     }
     default: {
