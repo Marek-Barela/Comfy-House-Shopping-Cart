@@ -1,4 +1,5 @@
 import React from "react";
+import ShoppingCartItem from "../shopping-cart-item";
 import { switchCartSidebar } from "../../actions/productsCartActions";
 import { getProductsCart } from "../../selectors/productsCartSelector";
 import { connect } from "react-redux";
@@ -26,6 +27,7 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
           </button>
           <div className={cartContent}>
             <h3>Your Cart</h3>
+            <ShoppingCartItem />
           </div>
           <div className={cartFooter}>
             <h4>Your Total : $0</h4>
