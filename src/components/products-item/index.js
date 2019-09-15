@@ -1,12 +1,16 @@
 import React from "react";
 import { getProductsCart } from "../../selectors/productsCartSelector";
-import { onProductAdded } from "../../actions/productsCartActions";
+import {
+  onProductAdded,
+  switchCartSidebar
+} from "../../actions/productsCartActions";
 import { connect } from "react-redux";
 import styles from "./index.module.css";
 
-const AddProductToCartButton = ({ onProductAdded, props }) => {
+const AddProductToCartButton = ({ onProductAdded, product }) => {
   const { button } = styles;
-  const { id, title, price, image } = props;
+  // Extract specific elements
+  const { id, title, price, image } = product;
   const productProps = { id, title, price, image };
   return (
     <button className={button} onClick={() => onProductAdded(productProps)}>
@@ -16,14 +20,27 @@ const AddProductToCartButton = ({ onProductAdded, props }) => {
   );
 };
 
-const ProductAlreadyInCartButton = () => {
+const ProductAlreadyInCartButton = ({ products, switchCartSidebar }) => {
   const { button } = styles;
-  return <button className={button}>IN CART</button>;
+  const { cartIsOpen } = products;
+  return (
+    <button className={button} onClick={() => switchCartSidebar(!cartIsOpen)}>
+      IN CART
+    </button>
+  );
 };
 
 const ProductItem = props => {
   const { header, span, imageWrapper } = styles;
-  const { id, title, price, image, onProductAdded, products } = props;
+  const {
+    id,
+    title,
+    price,
+    image,
+    onProductAdded,
+    products,
+    switchCartSidebar
+  } = props;
   const productExist = products.cartItems.find(item => item.id === id);
   return (
     <article>
@@ -32,10 +49,13 @@ const ProductItem = props => {
         {productExist === undefined ? (
           <AddProductToCartButton
             onProductAdded={onProductAdded}
-            props={props}
+            product={props}
           />
         ) : (
-          <ProductAlreadyInCartButton />
+          <ProductAlreadyInCartButton
+            products={products}
+            switchCartSidebar={switchCartSidebar}
+          />
         )}
       </div>
       <h3 className={header}>{title}</h3>
@@ -49,7 +69,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  onProductAdded
+  onProductAdded,
+  switchCartSidebar
 };
 
 export default connect(
