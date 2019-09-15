@@ -10,12 +10,52 @@
 
 .cartContainer {
   position: absolute;
+  padding: 20px;
   top: 0;
   right: 0;
   height: 100%;
-  min-width: 300px;
+  min-width: 400px;
   background-color: #e7e2dd;
   animation: slideIn 0.6s;
+}
+
+.closeCartButton {
+  font-size: 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+}
+
+.cartContent h3 {
+  font-size: 1.5em;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.cartFooter {
+  text-align: center;
+}
+
+.cartFooter h4 {
+  font-size: 0.9em;
+  letter-spacing: 2px;
+}
+
+.clearButton {
+  font-size: 0.9em;
+  background-color: #f09d51;
+  border: 1px solid #f09d51;
+  color: #ffffff;
+  padding: 10px 40px;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.clearButton:hover {
+  background-color: transparent;
+  color: #f09d51;
 }
 
 @keyframes slideIn {

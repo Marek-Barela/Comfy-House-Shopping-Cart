@@ -5,21 +5,33 @@ import { connect } from "react-redux";
 import styles from "./index.module.css";
 
 const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
-  const { overlay, cartContainer, cartContent, cartFooter } = styles;
+  const {
+    overlay,
+    cartContainer,
+    closeCartButton,
+    cartContent,
+    cartFooter,
+    clearButton
+  } = styles;
   const { cartIsOpen } = productsCart;
   return (
     cartIsOpen && (
       <div className={overlay}>
-        <div className={cartContainer}>
-          <button onClick={() => switchCartSidebar(!cartIsOpen)}>X</button>
+        <aside className={cartContainer}>
+          <button
+            className={closeCartButton}
+            onClick={() => switchCartSidebar(!cartIsOpen)}
+          >
+            <span className="far fa-window-close"></span>
+          </button>
           <div className={cartContent}>
             <h3>Your Cart</h3>
           </div>
           <div className={cartFooter}>
             <h4>Your Total : $0</h4>
-            <button>CLEAR CART</button>
+            <button className={clearButton}>CLEAR CART</button>
           </div>
-        </div>
+        </aside>
       </div>
     )
   );
