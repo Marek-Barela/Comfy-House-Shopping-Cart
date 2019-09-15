@@ -1,5 +1,8 @@
 .header {
+  position: fixed;
   background-color: #e7e2dd;
+  width: 100%;
+  z-index: 900;
 }
 
 .wrapper {
@@ -10,4 +13,11 @@
   align-items: center;
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.reactIcon {
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 50px;
 }

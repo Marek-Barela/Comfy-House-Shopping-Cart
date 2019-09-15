@@ -2,4 +2,13 @@
   position: absolute;
   right: 0;
   font-size: 1.3em;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.cart:hover {
+  color: #f09d51;
 }

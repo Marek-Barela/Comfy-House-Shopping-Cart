@@ -1,0 +1,41 @@
+.cartItem {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cartImage {
+  width: 75px;
+  height: 75px;
+}
+
+.productName {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.cost {
+  font-size: 0.8em;
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+
+.removeProduct {
+  color: grey;
+  font-size: 0.9em;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.productFooter span {
+  color: #f09d51;
+  cursor: pointer;
+}
+
+.size {
+  margin: 0;
+  text-align: center;
+  user-select: none;
+}

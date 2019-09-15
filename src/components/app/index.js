@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Header from "../header";
 import Hero from "../hero";
 import Products from "../products";
+import ShoppingCartOverlay from "../shopping-cart-overlay";
 import "./index.module.css";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Header />
       <Hero />
       <Products />
+      <ShoppingCartOverlay />
     </Fragment>
   );
 };
