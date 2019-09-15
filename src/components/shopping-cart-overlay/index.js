@@ -1,5 +1,7 @@
 import React from "react";
 import ShoppingCartItem from "../shopping-cart-item";
+import getFullItemsPrice from "../../utils/getFullItemsPrice";
+import roundItemsPrice from "../../utils/roundItemsPrice";
 import { switchCartSidebar } from "../../actions/productsCartActions";
 import { getProductsCart } from "../../selectors/productsCartSelector";
 import { connect } from "react-redux";
@@ -15,6 +17,11 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
     clearButton
   } = styles;
   const { cartIsOpen, cartItems } = productsCart;
+  const itemsPrice = getFullItemsPrice(cartItems);
+  /** Because of how javascript work we need to round price of items
+   * Otherwise price in the view will look like "$19.9900000004"
+   */
+  const roundedItemsPrice = roundItemsPrice(itemsPrice);
   return (
     cartIsOpen && (
       <div className={overlay}>
@@ -32,7 +39,7 @@ const ShoppingCartOverlay = ({ productsCart, switchCartSidebar }) => {
             })}
           </div>
           <div className={cartFooter}>
-            <h4>Your Total : $0</h4>
+            <h4>Your Total : ${roundedItemsPrice}</h4>
             <button className={clearButton}>CLEAR CART</button>
           </div>
         </aside>
